@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations Shreya! 🎉</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #FFF3E0;
+            text-align: center;
+        }
+
+        .container {
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px rgba(33, 150, 243, 0.1);
+            max-width: 600px;
+            margin: 20px;
+            border: 2px solid #FF7043;
+        }
+
+        h1 {
+            color: #FFCA28;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .laptop-emoji {
+            font-size: 6em;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .celebrate-btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background: linear-gradient(45deg, #2196F3, #66BB6A);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 15px;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+        }
+
+        .celebrate-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+        }
+
+        .treat-btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background: linear-gradient(45deg, #FF7043, #FFCA28);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 112, 67, 0.3);
+        }
+
+        .treat-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 112, 67, 0.4);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .treat-message {
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #FF7043;
+            font-weight: bold;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        p {
+            color: #37474F;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Congratulations Shreya! 🎉</h1>
+        <div class="laptop-emoji">💻</div>
+        <p>Woohoo! Super excited about your new laptop!</p>
+        <button class="celebrate-btn" onclick="celebrate()">Click to Celebrate! 🎊</button>
+        <button class="treat-btn" onclick="askForTreat()">Click Me Too! 😋</button>
+        <p class="treat-message hidden" id="treatMessage">Hey... What about that treat... 😉🍕</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        function celebrate() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#FF7043', '#2196F3', '#FFCA28']
+            });
+        }
+
+        function askForTreat() {
+            const treatMessage = document.getElementById('treatMessage');
+            treatMessage.classList.remove('hidden');
+            confetti({
+                particleCount: 80,
+                spread: 50,
+                origin: { y: 0.6 },
+                colors: ['#FF7043', '#2196F3', '#FFCA28']
+            });
+        }
+    </script>
+</body>
+</html>
